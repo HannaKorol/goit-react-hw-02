@@ -1,12 +1,20 @@
 import s from "./Options.module.css";
 
-export default function Options() {
-    return (
-      <div className={s.flex}>
-        <button className={s.btn}>Good</button>
-        <button className={s.btn}>Neutral</button>
-        <button className={s.btn}>Bad</button>
-        <button className={s.btn}>Reset</button>
-      </div>
-    );
+export default function Options(onLeaveFeedback, onResetFeedback) {
+  return (
+    <div className={s.flex}>
+      <button onClick={() => onLeaveFeedback("good")} className={s.btn}>
+        Good
+      </button>
+      <button onClick={() => onLeaveFeedback("neutral")} className={s.btn}>
+        Neutral
+      </button>
+      <button onClick={() => onLeaveFeedback("bad")} className={s.btn}>
+        Bad
+      </button>
+      <button onClick = {onResetFeedback} className= {s.btn}>
+        Reset
+      </button>
+    </div>
+  );
 }
