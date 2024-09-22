@@ -6,15 +6,15 @@ export default function Feedback (feedback) {
         <ul className={s.flex}>
           <li>Good: {feedback.good}</li>
           <li>Neutral: {feedback.neutral}</li>
-          <li>Bad:{feedback.bad}</li>
-          <li>Total:{feedback.good + feedback.neutral + feedback.bad}</li>
+          <li>Bad: {feedback.bad}</li>
+          <li>Total: {feedback.good + feedback.neutral + feedback.bad}</li>
           <li>
-            Positive:
-            {Math.round(
+            Positive:   
+             {Math.round(
               (feedback.good /
                 (feedback.good + feedback.neutral + feedback.bad)) *
                 100
-            )}
+            )}%
           </li>
         </ul>
       </div>
