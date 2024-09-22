@@ -1,6 +1,6 @@
 import Description from "./Description/Description";
 import Options from "./Options/Options";
-import {useState} from 'react';
+import { useState } from 'react';
 import Feedback from "./Feedback/Feedback";
 
 
@@ -39,7 +39,11 @@ export default function App() {
         onLeaveFeedback={onLeaveFeedback}
         onResetFeedback={onResetFeedback}
       />
-      <Feedback feedback={feedback} />
+      <Feedback
+        good={feedback.good}
+        neutral={feedback.neutral}
+        bad={feedback.bad}
+      />
     </div>
   );
 };
