@@ -1,0 +1,17 @@
+.flex {
+    display: flex;
+    gap: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.btn {
+    color: rgb(18, 2, 2);
+    background-color: #46454936;
+    font-size: 20px;
+}
+
+
+
+
+

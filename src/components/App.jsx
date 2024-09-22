@@ -12,12 +12,12 @@ export default function App() {
     // Отримання даних з lokak storage "lecture2 40:00"
     const savedFeedback = window.localStorage.getItem("feedback");
     return savedFeedback
-      ? JSON.parse(savedFeedback) //Використовуємо JSON.parse для перетворення рядка назад в об'єкт під час завантаження сторінки
+      ? JSON.parse(savedFeedback) //Використовуємо JSON.parse для перетворення рядка назад в об'єкт під час завантаження сторінки "lecture2 40:00"
       : { good: 0, neutral: 0, bad: 0 };
   });
   
   useEffect(() => {
-    window.localStorage.setItem("feedback", JSON.stringify(feedback)); //Використовуємо JSON.stringify для перетворення об'єкта в рядок перед збереженням.
+    window.localStorage.setItem("feedback", JSON.stringify(feedback)); //Використовуємо JSON.stringify для перетворення об'єкта в рядок перед збереженням. "lecture2 40:00"
   }, [feedback]);
 
   // Функція для оновлення фідбеку
@@ -40,6 +40,7 @@ export default function App() {
   };
   //Загальна кількість фітбуків
   const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
+  //Обчислення позитивних відгуків (складний код-можна спробувати спростити і правильно додати як props до компонентів)
   const positiveFeedback = Math.round((feedback.good / totalFeedback) * 100);
 
 
