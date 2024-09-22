@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Options.module.css";
 
-export default function Options({ onLeaveFeedback, onResetFeedback }) {
+export default function Options({ onLeaveFeedback, onResetFeedback, totalFeedback }) {
   return (
     <div className={s.flex}>
       <button onClick={() => onLeaveFeedback("good")} className={s.btn}>
@@ -13,9 +13,11 @@ export default function Options({ onLeaveFeedback, onResetFeedback }) {
       <button onClick={() => onLeaveFeedback("bad")} className={s.btn}>
         Bad
       </button>
-      <button onClick={onResetFeedback} className={s.btn}>
-        Reset
-      </button>
+      {totalFeedback > 0 && (
+        <button onClick={onResetFeedback} className={s.btn}>
+          Reset
+        </button>
+      )}
     </div>
   );
 }
